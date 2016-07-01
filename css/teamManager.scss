@@ -1,0 +1,77 @@
+
+.myTable {
+  font-family: proxima;
+  color: #ffffff;
+  width:130%;
+  border:none;
+}
+
+table {
+  width:100%;
+  margin-right:0%;
+  margin-left: 0%;
+}
+
+table tbody, table thead
+{
+  width: 90%;
+  display: block;
+  border:none;
+}
+
+table th:nth-child(1), table td:nth-child(1) {
+  width: 200px;
+}
+
+table th:nth-child(2), table td:nth-child(2) {
+  width: 100px;
+}
+
+table th:nth-child(3), table td:nth-child(3) {
+  width: 150px;
+}
+
+table th:nth-child(4), table td:nth-child(4) {
+  width: 100px;
+}
+
+table th:nth-child(5), table td:nth-child(5) {
+  width: 150px;
+ }
+
+table th:nth-child(6), table td:nth-child(6) {
+  width: 150px;
+}
+
+table th:nth-child(7), table td:nth-child(7) {
+  width: 150px;
+}
+
+table th:nth-child(8), table td:nth-child(8) {
+  width: 50px;
+}
+
+table tbody
+{
+  overflow: scroll;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  height: 500px;
+}
+
+.selected {
+  background-color: orange;
+}
+
+.game-name {
+  color: #73c1AE;
+  font-size: 80%;
+}
+
+.available-money {
+  color: #2CA4BD;
+}
+
+.contest-header {
+  font-size: 120%;
+}
