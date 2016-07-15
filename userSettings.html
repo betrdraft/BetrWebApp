@@ -1,25 +1,98 @@
-<div class="row">
-    <div class="large-6 columns">
-        <h3>Account Info</h3>
-        <table>
-            <tr>
-                <td>Portrait</td>
-                <td>PLACEHOLDER</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>John Doe</td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td>John.doe@gmail.com</td>
-            </tr>
-        </table>
+ <div class="container "  style="padding-top: 50px;">
+<div class="row wallet" >
+    <div class="col-sm-6 columns userseting" style="font-size:16px;" >
+        
+		<div class="row">
+		<h3 style="margin-bottom: 40px;" >Account Info<span style="color: #8c8c8c;font-size: 20px;margin-left: 10px; " ng-click="edituserdetail()" >(Click Edit)</span></h3>
+		<form class="form-horizontal" toggle-class="edit" id="editprofile" role="form">
+		<div class="form-group">
+    <label class="control-label col-sm-4" style="margin-top: 43px;" for="profileimage">Portrait</label>
+    <div class="col-sm-8">
+     <img style="max-width: 150px; border-radius: 50%;"  id="profileimage" src="https://pbs.twimg.com/profile_images/735090787621339136/N3JlXj6k.jpg"/>
     </div>
-    <div class="large-6 columns">
-        <h3>Payment Info</h3>
-        <input type="radio" name="ccNumber" value="672" id="cc1"><label for="cc1">Card No **** **** **** *672</label> Delete
-        <input type="radio" name="ccNumber" value="976" id="cc2"><label for="cc2">Card No **** **** **** *976</label> Delete
-        <input type="radio" name="addNew" value="addNew" id="newCard"><label for="newCard">Add new card</label>
+  </div>
+		<div class="form-group">
+    <label class="control-label col-sm-4" for="Name">Name</label>
+    <div class="col-sm-8">
+	<label class="control-label" for="Name">John Doe</label>
+      <input type="Name" class="form-control" id="Name" placeholder="Enter Name">
     </div>
+  </div>
+		<div class="form-group">
+    <label class="control-label col-sm-4" for="email">Email</label>
+    <div class="col-sm-8">
+	<label class="control-label" for="email">johndoe@gmail.com</label>
+	<input type="Email" class="form-control" id="Email" placeholder="Enter Email">
+    </div>
+  </div>
+		<div class="form-group">
+    <label class="control-label col-sm-4" for="email">Mobile</label>
+    <div class="col-sm-8">
+      <label class="control-label" for="email">+1236547896</label>
+		<input type="text" class="form-control" id="Mobile" placeholder="Enter Mobile">
+  </div>
+  </div>
+		<div class="form-group"  >
+    <label class="control-label col-sm-4" for="Password">Change Password</label>
+    <div class="col-sm-8">
+	  <label class="control-label" for="Password">************</label>
+      <input type="Password" class="form-control" id="Password" placeholder="Enter Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-4" for="cPassword">Confirm Password</label>
+    <div class="col-sm-8">
+	<label class="control-label" for="Password">************</label>
+      <input type="Password" class="form-control" id="cPassword" placeholder="Enter Confirm Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3" style="padding-top:0px; font-size:22px;" for="cPassword">Theme</label>
+    <div class="col-sm-9" style="margin-top:6px;"  >
+	<div  style="position:relative; display: inline-block;" >
+	<input type="radio" class="radior" id="black" name="theme" ><label for="black" class="radiolabel"></label><label for="black" style="font-size: 16px;  margin-top: 2px; cursor:pointer;">Black</label>
+	</div>
+	<div  style="position:relative; display: inline-block;">
+	<input type="radio" class="radior" id="white" name="theme" ><label for="white" class="radiolabel"></label><label for="white"  style="font-size: 16px;  margin-top: 2px; cursor:pointer;" >White</label>
+	</div>
+    </div>
+  </div>
+   <div class="form-group passworddiv">
+    <button style=" margin-top: 20px; line-height: 0px; margin-left:24px; max-width: 300px; width: 100%; font-size: 20px;height: 49px;" class="button rounded-corner button-gradient">Update Settings</button>
+
+  </div>
+ 		</form>
+	</div>
+      </div>
+	  <div class="col-sm-6 columns" style="font-size:16px;" >
+       
+		
+       <div class="row paymentinfo" style="max-width:400px; margin:0 auto;" >
+	    <h3 style="margin-bottom: 70px;">Payment Info</h3>
+ <div class="row"><input class="radior" type="radio" name="ccNumber" value="672" id="cc1"><label for="cc1" class="radiolabel"></label><label for="cc1">Card No **** **** **** *672</label> <span>Delete</span></div>
+		<div class="row" ><input class="radior" type="radio" name="ccNumber" value="976" id="cc2"><label for="cc2" class="radiolabel"></label><label for="cc2">Card No **** **** **** *976</label> <span>Delete</span></div>
+		<div class="row" ><input class="radior" type="radio" name="addNew" value="addNew" id="newCard"><label  for="newCard" class="radiolabel"></label><label for="newCard">Add new card</label></div>	  
+<div class="large-12 columns sign-up-padding paymentmethod">
+
+<form>
+<div ng-app="betr" ng-controller="loginController"  style="color: #9a9a9a; font-family: bentonsans;" class="row">
+<div class="row formcont">
+<div class="col-sm-8"><input ng-model="creditcardnumber" class="input-box" type="text" placeholder="Credit Card Number"/></div>
+<div class="col-sm-4"><input ng-model="securitycode" class="input-box" type="text" placeholder="Security Code"/></div>
+</div>
+<div class="row formcont">
+<div class="col-sm-12"><input ng-model="nameoncard" class="input-box" type="text" placeholder="Name on Card"/></div>
+</div>
+<div class="row formcont">
+<div class="col-sm-12"><input ng-model="expirationdate" class="input-box" type="text" placeholder="Expiration Date"/></div>
+</div>
+<div class="row formcont">
+<button style="height: 37px; min-width: 120px;  margin-top: 20px;  font-size: 16px; line-height: 0px;" class="button rounded-corner button-gradient">+ Add</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+    </div>
+</div>
 </div>
