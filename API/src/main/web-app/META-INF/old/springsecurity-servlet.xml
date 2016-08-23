@@ -1,0 +1,13 @@
+<security:http realm="Protected API" use-expressions="true" auto-config="false" create-session="stateless" entry-point-ref="BetrAuthenticationEntryPoint">
+    <security:custom-filter ref="authenticationTokenProcessingFilter" position="FORM_LOGIN_FILTER" />
+    <security:intercept-url pattern="/authorize" access="permitAll"/>
+    <security:intercept-url pattern="/**" access="isAuthenticated()" />
+</security:http>
+
+<bean id="BetrAuthenticationEntryPoint"
+    class="com.betr.server.authorization.BetrAuthenticationEntryPoint" />
+
+<bean id="authenticationTokenProcessingFilter"
+    class="com.betr.server.authorization.BetrAuthenticationTokenProcessingFilter >
+    <constructor-arg ref="authenticationManager" />
+</bean>

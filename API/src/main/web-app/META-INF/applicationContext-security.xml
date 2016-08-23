@@ -1,0 +1,13 @@
+<security:http realm="Protected API" use-expressions="true" auto-config="false" create-session="stateless" entry-point-ref="CustomAuthenticationEntryPoint">
+    <security:custom-filter ref="authenticationTokenProcessingFilter" position="FORM_LOGIN_FILTER" />
+    <security:intercept-url pattern="/authenticate" access="permitAll"/>
+    <security:intercept-url pattern="/**" access="isAuthenticated()" />
+</security:http>
+
+<bean id="CustomAuthenticationEntryPoint"
+    class="com.demo.api.support.spring.CustomAuthenticationEntryPoint" />
+
+<bean id="authenticationTokenProcessingFilter"
+    class="com.demo.api.support.spring.AuthenticationTokenProcessingFilter" >
+    <constructor-arg ref="authenticationManager" />
+</bean>

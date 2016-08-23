@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="css/contestHome.css" />
+
+    <div class="row currentBets fullWidth">
+        <div class="medium-2 columns">
+            <h5>Current Bets</h5>
+        </div>
+        <span ng-repeat="bet in lastThreeBets">
+        <div class="medium-2 columns current-bets">
+            <span class="contest-header">{{bet.gameName}}</span>
+            ${{bet.amountEntered}}<br>{{bet.ending}} days
+        </div>
+        </span>
+        </ul>
+        <div class="medium-2 columns default-gradient your-funds-box">
+            <h5>Your Funds
+                <br>$FUNDS</h5><h6><b><a data-open="addFunds">+Add Funds</a></b></h6>
+        </div>
+    </div>
+    <div class="row">
+    <div class="small-2 columns">
+        <select>
+            <option value="nfl">NFL</option>
+            <option value="mlb">MLB</option>
+        </select>
+        </div>
+        <div class="small-2 columns">
+            <select>
+                <option value="100200k">$100-200k</option>
+                <option value="200300k">$200-300k</option>
+            </select>
+        </div>
+        <div class="small-1 columns end">
+            <a href="#" style="width:100%" class="button rounded-corner button-gradient">GO</a>
+        </div>
+    </div>
+    </div>
+        <div class="row">
+            <div class="large-12 columns">
+    <table class="responsive contest-table">
+        <thead>
+        <tr>
+            <th>Game</th>
+            <th>Tooltips</th>
+            <th>Entries</th>
+            <th>Matches</th>
+            <th>Buy in</th>
+            <th>Prize pool</th>
+            <th>Deadline</th>
+            <th>Your Entries</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="contest in contests">
+            <td><span class="contest-text" ng-click="selectGame($index);redirect('#teamManager')")>{{contest.gameName}}</span></td>
+            <td></td>
+            <td>{{contest.numEntries}}</td>
+            <td>{{contest.numMatches}}</td>
+            <td>${{contest.buyIn}}</td>
+            <td>${{contest.prizePool}}</td>
+            <td>{{contest.deadLine}} days</td>
+            <td>YourEntries</td>
+        </tr>
+        </tbody>
+        </tr>
+        </thead>
+    </table>
+</div></div>

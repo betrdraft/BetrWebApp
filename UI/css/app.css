@@ -1,0 +1,171 @@
+@font-face {
+  font-family: proxima;
+  src: url(../fonts/ProximaNovaSoft-Bold.otf); }
+body {
+  marging-top: 15rem;
+  font-family: proxima;
+  color: #2b2b2b; }
+
+.title-bar {
+  background: white;
+  padding: 0.9rem; }
+
+.top-bar {
+  background: white;
+  font-family: proxima; }
+  .top-bar ul {
+    background: white; }
+    .top-bar ul li {
+      background: white; }
+      .top-bar ul li a {
+        color: #606060;
+        font-size: 80%; }
+
+.menu-text {
+  color: black; }
+  @media only screen and (max-width: 40em) {
+    .menu-text {
+      display: none !important; } }
+
+@media only screen and (min-width: 40em) {
+  .top-bar-right {
+    position: relative;
+    top: 2rem; } }
+.dropdown.menu li {
+  float: left; }
+.dropdown.menu .submenu {
+  border: none; }
+.dropdown.menu .is-dropdown-submenu-parent.is-right-arrow > a::after {
+  border-color: white transparent transparent; }
+
+.is-drilldown-submenu-parent > a::after {
+  border-color: transparent transparent transparent #fff; }
+
+.js-drilldown-back::before {
+  border-color: transparent white transparent transparent; }
+
+.fullWidth {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: initial; }
+
+.logo {
+  width: 180px;
+  /* you can use % */
+  height: auto; }
+
+.menuImage {
+  width: 100px;
+  /* you can use % */
+  height: auto; }
+
+.rounded-corner {
+  border-radius: 1000px; }
+
+.load-more-games-button {
+  background-color: #4db1b6;
+  color: white; }
+
+.column.align-right {
+  margin-left: auto;
+  margin-right: auto;
+  float: right !important; }
+
+.main-container {
+  float: left;
+  position: relative;
+  left: 50%; }
+
+.fixer-container {
+  float: left;
+  position: relative;
+  left: -50%; }
+
+[ng-click],
+[data-ng-click],
+[x-ng-click] {
+  cursor: pointer; }
+
+/* slide in from the right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%); }
+  to {
+    transform: translateX(0); } }
+.ng-enter {
+  animation: slideInRight 0.5s both ease-in;
+  z-index: 8888; }
+
+table {
+  width: 75%;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: proxima;
+  color: black;
+  border: none; }
+
+table thead {
+  background-color: #f7f7f7; }
+
+table tr:nth-child(even) {
+  background-color: #f7f7f7; }
+
+table tr:nth-child(odd) {
+  background-color: white; }
+
+.money-text {
+  font-size: 150%;
+  color: #56b5b4; }
+
+.button-gradient {
+  background: #7cc5ab;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #7cc5ab, #4db1b6);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #7cc5ab, #4db1b6);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #7cc5ab, #4db1b6);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #7cc5ab, #4db1b6);
+  /* Standard syntax */ }
+
+.default-gradient {
+  background: #7cc5ab;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #7cc5ab, #4db1b6);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #7cc5ab, #4db1b6);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #7cc5ab, #4db1b6);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #7cc5ab, #4db1b6);
+  /* Standard syntax */ }
+
+select {
+  background-color: #fafafa; }
+
+.sign-up-padding {
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 10%;
+  padding-bottom: 10%; }
+
+.input-box {
+  margin-top: 5px; }
+
+::-webkit-input-placeholder {
+  text-align: center; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center; }
+
+:-ms-input-placeholder {
+  text-align: center; }
+
+/*# sourceMappingURL=app.css.map */

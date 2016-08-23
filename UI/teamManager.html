@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="css/teamManager.css" />
+<div class="row">
+    <div class="large-12 columns">
+        <div class="contest-header">
+        Build Team for <span class="game-name">{{contestName}}</span>
+    <br>
+        Available <span class="available-money">${{currentSalary}}</span>
+
+        Required $NUM Offense $NUM Defense
+            </div>
+        <br>
+        <table border="0" class="responsive">
+            <thead>
+            <tr>
+                <th>Player</th>
+                <th>Position</th>
+                <th>FPPG</th>
+                <th>Played</th>
+                <th>OPRK</th>
+                <th>Game</th>
+                <th>Salary</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody ng-scrollbars>
+            <tr ng-repeat="player in players">
+                <td>
+                    {{player.name}}
+                </td>
+                <td>
+                    {{player.position}}
+                </td>
+                <td>
+                    {{player.fppg}}
+                </td>
+                <td>
+                    {{player.played}}
+                </td>
+                <td>
+                    {{player.oprk}}
+                </td>
+                <td>
+                    {{player.game}}
+                </td>
+                <td>
+                    ${{player.value}}
+                </td>
+                <td>
+                    <button ng-click="selectPlayer(player.id, player.value)" class="small button">{{player.button}}
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+<div class="row">
+    <div class="small-12 columns">
+        <div class="main-container">
+            <div class="fixer-container">
+                <button class="button rounded-corner">Cancel</button>
+                <button class="button rounded-corner">Save</button>
+            </div>
+        </div>
+    </div>
+
+</div>
