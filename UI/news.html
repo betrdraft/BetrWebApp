@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
     <div class="large-12 columns">
         News related to your bets
     </div>
@@ -10,4 +10,31 @@
             </div>
         </div>
     </div>
+</div> -->
+<div class="container">
+<div class="row" style="padding-top:50px" >
+<h3 style="margin: 0px 0px 42px 0px;font-family: proxima;
+" >News related to your bets  </h3>
+</div>
+    <div ng-repeat="news in newsItems" class="play news row" >
+	<div class="col-sm-3 img" >
+	<img src="img/nfl.jpg"/>
+	</div>
+	<div class="col-sm-9" >
+	<h3>{{news.headline}}</h3>
+                <p>{{news.description}}</p>
+   </div>
+	</div>
+	<div class="row" style="padding-top:50px" >
+<h3 style="margin: 0px 0px 42px 0px;font-family: proxima;" >Other News </h3>
+</div>
+    <div ng-repeat="news in newsItems" class="play row news" >
+	<div class="col-sm-3 img" >
+	<img src="img/nfl.jpg"/>
+	</div>
+	<div class="col-sm-9" >
+	<h3>{{news.headline}}</h3>
+                <p>{{news.description}}</p>
+   </div>
+	</div>
 </div>

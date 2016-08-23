@@ -37,6 +37,11 @@ betr.config(function($routeProvider) {
             templateUrl: 'fundsManager.html',
             controller: 'fundsManagerController'
         })
+		
+		.when('/test', {
+            templateUrl: 'test1.html',
+            controller: 'team'
+        })
 
         .when('/userSettings', {
             templateUrl: 'userSettings.html',
@@ -56,23 +61,29 @@ betr.controller('fundsManagerController', function ($scope) {
 
 betr.controller('userSettingsController', function ($scope) {
     $scope.pageClass = 'page-user-settings';
+	 $scope.edituserdetail = function(){
+    var myEl = angular.element( document.querySelector( '#editprofile' ) );
+myEl.toggleClass('edit'); 
+  }
 });
-
 betr.controller('contestsController', function ($scope, contestService) {
     $scope.pageClass = 'page-contests';
 
     $scope.lastThreeBets = [{
-        gameName: 'NFL 100K Drive',
+        gameName: '$250k Sat NFL Dive',
         amountEntered: 20,
-        ending: 5
+        endingd: 5,
+        endingh: 6
     }, {
-        gameName: 'NFL 100K Drive',
+        gameName: '$1 Million SAT NFL Splash',
         amountEntered: 20,
-        ending: 5
+         endingd: 3,
+        endingh: 2
     }, {
-        gameName: 'NFL 100K Drive',
-        amountEntered: 20,
-        ending: 5
+        gameName: '$60k Sat NFL Squib',
+        amountEntered: 10,
+         endingd: 5,
+        endingh: 6
     },]
 
     $scope.contests = [
@@ -82,7 +93,9 @@ betr.controller('contestsController', function ($scope, contestService) {
             numMatches: 200,
             buyIn: 10,
             prizePool: 100000,
-            deadLine: 5
+            deadLine: 5,
+			tooltip1: true,
+			tooltip2: true
         },
         {
             gameName: 'NFL 100K Drive',
@@ -90,7 +103,9 @@ betr.controller('contestsController', function ($scope, contestService) {
             numMatches: 200,
             buyIn: 10,
             prizePool: 100000,
-            deadLine: 5
+            deadLine: 5,
+			tooltip1: true,
+			tooltip2: true
         },
         {
             gameName: 'NFL 100K Drive',
@@ -98,7 +113,9 @@ betr.controller('contestsController', function ($scope, contestService) {
             numMatches: 200,
             buyIn: 10,
             prizePool: 100000,
-            deadLine: 5
+            deadLine: 5,
+			tooltip1: true,
+			tooltip2: false
         },
         {
             gameName: 'NFL 100K Drive',
@@ -106,7 +123,9 @@ betr.controller('contestsController', function ($scope, contestService) {
             numMatches: 200,
             buyIn: 10,
             prizePool: 100000,
-            deadLine: 5
+            deadLine: 5,
+			tooltip1: true,
+			tooltip2: false
         },
         {
             gameName: 'NFL 100K Drive',
@@ -114,7 +133,9 @@ betr.controller('contestsController', function ($scope, contestService) {
             numMatches: 200,
             buyIn: 10,
             prizePool: 100000,
-            deadLine: 5
+            deadLine: 5,
+			tooltip1: true,
+			tooltip2: true
         }
     ]
 
@@ -164,7 +185,7 @@ betr.controller('loginController', function ($scope, $http, $window) {
 
 betr.controller('walletController', function($scope) {
     $scope.pageClass = 'page-wallet';
-
+    $scope.Class = 'active';
     $scope.availableBalance = 20000;
 
     $scope.walletItems = [
@@ -198,6 +219,81 @@ betr.controller('walletController', function($scope) {
         }]
 });
 
+betr.controller('team', function($scope) {
+    $scope.pageClass = 'page-team';
+
+    $scope.availableBalance = 20000;
+ $scope.currentSalary = 50000;
+   /*  $scope.games = [
+            {
+            date:'2015/01/01',
+            type:'Withdrawal',
+            description: 'Description goes here',
+            amount: '100000',
+            balance: '2000000'
+        },
+        {
+            date:'2015/01/01',
+            type:'Withdrawal',
+            description: 'Description goes here',
+            amount: '100000',
+            balance: '2000000'
+        },
+        {
+            date:'2015/01/01',
+            type:'Withdrawal',
+            description: 'Description goes here',
+            amount: '100000',
+            balance: '2000000'
+        },
+        {
+            date:'2015/01/01',
+            type:'Withdrawal',
+            description: 'Description goes here',
+            amount: '100000',
+            balance: '2000000'
+        }]; */
+	/*	$scope.contestName = game.gameName;
+    $scope.selectedPlayers = [];
+    $scope.buttons = [];
+
+
+
+    $scope.selectPlayer = function(id, salary) {
+        var index;
+        if((index = $scope.selectedPlayers.indexOf(id)) > -1) {
+            $scope.selectedPlayers.splice(index, 1);
+            $scope.currentSalary = $scope.currentSalary + salary;
+            angular.forEach(players, function (player) {
+                if (player.id === id) {
+                    player.button = '+';
+                }
+            })
+        } else {
+            if ($scope.currentSalary - salary >= 0) {
+                $scope.selectedPlayers.push(id);
+                $scope.currentSalary = $scope.currentSalary - salary;
+                angular.forEach(players, function (player) {
+                    if (player.id === id) {
+                        player.button = '-';
+                    }
+                })
+            }
+        }
+
+    };
+
+    var initialize = function() {
+        $http.get('/api/retrieve/players/values/all').success(function(result, status) {
+            $scope.players = result;
+            //players = result;
+        });
+    };
+
+    initialize(); */
+
+});
+
 betr.controller('newsController', function($scope) {
     $scope.pageClass = 'page-news';
 
@@ -215,6 +311,24 @@ betr.controller('newsController', function($scope) {
 
 betr.controller('htpController', function($scope) {
     $scope.pageClass = 'page-howToPlay';
+	$scope.Plays = [
+        {
+            headline:'Adding Fund',
+            description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.'
+        },
+        {
+            headline:'Building Team',
+            description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        },
+        {
+            headline:'Placing a Bet',
+            description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        },
+        {
+            headline:'Withdrawal',
+            description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        }
+        ];
 });
 
 
@@ -273,15 +387,65 @@ betr.controller('viewController', ['$scope', function($scope) {
     };
 }]);
 
+
 betr.controller('teamManagerController', ['$scope', '$http', 'contestService', function($scope, $http, contestService) {
     $scope.pageClass = 'page-team-manager';
     var game = contestService.getGame();
 
-    $scope.currentSalary = 50000;
-    $scope.contestName = game.gameName;
+    $scope.currentSalary = 2500000;
+    $scope.contestName = '$250k Sat NFL Dive';
+    $scope.defense = '3/6';
+    $scope.Offense = '5/8';
+   // $scope.contestName = game.gameName;
     $scope.selectedPlayers = [];
     $scope.buttons = [];
-
+$scope.players = [{
+            player:'Elias Mekuria',
+            position:'QB',
+            FPPG: '13',
+            played: '12',
+            OPRK: '13th',
+            game: 'CIN@NO',
+            salary: '7400',
+			status:true
+        },
+       {
+            player:'Arjun BAbu',
+            position:'QB',
+            FPPG: '13',
+            played: '12',
+            OPRK: '13th',
+            game: 'CIN@NO',
+            salary: '7400',
+			status:true
+        },{
+            player:'David Rosential',
+            position:'QB',
+            FPPG: '13',
+            played: '12',
+            OPRK: '13th',
+            game: 'CIN@NO',
+            salary: '7400',
+			status:false
+        },{
+            player:'Charles Gooding',
+            position:'QB',
+            FPPG: '13',
+            played: '12',
+            OPRK: '13th',
+            game: 'CIN@NO',
+            salary: '7400',
+			status:true
+        },{
+            player:'Ned Jamieson',
+             position:'QB',
+            FPPG: '13',
+            played: '12',
+            OPRK: '13th',
+            game: 'CIN@NO',
+            salary: '7400',
+			status:false
+        }];
 
 
     $scope.selectPlayer = function(id, salary) {
@@ -306,7 +470,7 @@ betr.controller('teamManagerController', ['$scope', '$http', 'contestService', f
             }
         }
 
-    };
+    }; 
 
     var initialize = function() {
         $http.get('/api/retrieve/players/values/all').success(function(result, status) {

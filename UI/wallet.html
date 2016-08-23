@@ -1,19 +1,16 @@
-
-<div class="row">
-    <div class="large-12 columns">
-        Your available balance: <span class="money-text">${{availableBalance}}</span>
-        <a data-open="addFunds" class="button rounded-corner button-gradient">+Add funds</a>
-        <a href="#" class="button rounded-corner button-gradient">$Withdrawal</a>
+<div class="container">
+<div class="row wallet" >
+    <div class="col-sm-12 columns" style="font-size:16px;" >
+        <p style="float: left; margin-right:10px; ">Your available balance is <span class="money-text">${{availableBalance}}</span></p>
+        <p style="float: left;"><a data-open="addFunds" style="font-size: 15px;height: 40px;line-height: 13px;" class="button rounded-corner button-gradient">+ Add funds</a>
+        <a href="#" style="font-size: 15px;height: 40px;line-height: 13px;" class="button rounded-corner button-gradient">$ Withdrawal</a></p>
     </div>
-</div>
-
-<div class="row">
-    <div class="large-12 columns">
-    <h4>Recent Transactions</h4>
-        </div>
+	 
+    <div class="col-sm-12 columns">
+    <h4 style="margin-bottom: 24px; font-size:24px;" >Recent Transactions</h4>
     </div>
-
-<table border="0" class="responsive">
+	<div class="col-sm-12 columns">
+    <table border="0" class="Wallet">
     <thead>
     <tr>
         <th>Date</th>
@@ -33,3 +30,6 @@
     </tr>
     </tbody>
     </table>
+    </div>
+	</div>
+	

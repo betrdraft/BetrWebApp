@@ -23,16 +23,16 @@
 </head>
 <body>
 <div class="row">
-    <div class="large-10 columns sign-up-padding">
-        <div ng-app="betr" ng-controller="signUpController">
-            <img style="width:200%; padding-bottom:20px" class="logo" src="img/signupLogo.gif">
+    <div class="large-12 columns sign-up-padding signup">
+        <div ng-app="betr" ng-controller="signUpController" style="color: #9a9a9a; font-family: bentonsans;">
+            <img style="width:100%; padding-bottom:44px" class="logo" src="img/signupLogo.gif">
             <input ng-model="name" class="input-box text-center" type="text" placeholder="Name"/>
             <input ng-model="email" class="input-box text-center" type="text" placeholder="Email"/>
             <input ng-model="phoneNumber" class="input-box text-center" type="text" placeholder="Mobile"/>
             <input ng-model="password" class="input-box text-center" type="text" placeholder="Password"/>
             <input class="input-box text-center" type="text" placeholder="Confirm Password"/>
-            <button style="margin-top:10px; width:100%;" ng-click='signUp()' class="button rounded-corner button-gradient">Sign Up</button>
-            <br>Already have an account? <a href="login.html">Sign in</a>
+            <button style="width:100%;" ng-click='signUp()' class="button rounded-corner button-gradient">Signup</button>
+            <br>Already have an account? <a href="login.html"  style="color: #4eb2b6;">Sign in</a>
         </div>
     </div>
 </div>
